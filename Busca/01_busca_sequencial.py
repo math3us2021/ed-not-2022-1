@@ -7,9 +7,9 @@
 # b) -1, se o elemento não existir
 
 nums = [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 51, 54, 57, 60]
-from data.primos import primos
-from data.lista_nomes import nomes
-from time import time
+# from data.primos import primos
+# from data.lista_nomes import nomes
+# from time import time
 """
     Função que implementa a busca sequencial
     Procura por val dentro de lista
