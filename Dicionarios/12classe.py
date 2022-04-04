@@ -91,9 +91,23 @@ class FormaGeometrica:
 
 ######################################################################
 
+# Metodo para calcular a area da forma geometrica
+@property
+def area(self):
+    from math import pi
+    if (self.tipo == "R"):  # Retangulo
+        return self.base * self.altura
+    elif (self.tipo == "T"): # Triangulo
+        return self.base * self.altura / 2
+    else : # Elipse
+        return (self.base/2) * (self.altura/2) * pi
+
+
+########################################################################
+
 # Criando objetos a partir da classe
-forma1 = FormaGeometrica(12, 7, "R")    # Isso chama __init__()
-forma2 = FormaGeometrica(7.5, 8.2, "T")
+forma1 = FormaGeometrica(12, 7, 10)    # Isso chama __init__()
+forma2 = FormaGeometrica(7.5, 8.2, 10)
 
 # forma1.set_base("farinha")
 
@@ -102,5 +116,5 @@ forma2 = FormaGeometrica(7.5, 8.2, "T")
 
 forma2.altura = "dois palmos"
 
-print(f"forma1: base {forma1.base}, altura {forma1.altura}, tipo {forma1.tipo}")
-print(f"forma2: base {forma2.base}, altura {forma2.altura}, tipo {forma2.tipo}")
+print(f"forma1: base {forma1.base}, altura {forma1.altura}, tipo {forma1.tipo}, area {area(forma1.area)}")
+print(f"forma2: base {forma2.base}, altura {forma2.altura}, tipo {forma2.tipo},area {area(forma2.area)}")

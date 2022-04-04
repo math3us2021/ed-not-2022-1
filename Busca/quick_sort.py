@@ -3,6 +3,8 @@
 # Escolhe u dos elementos da lista para ser o pivô( na nossa implementação o ultimo elemento)
 # na primeira passado, divide a lista, a partir da posição final da lista,em um sublista á esquerda
 # conyendo apenas valores
+from data.nomes_desord import nomes
+# from time import time
 
 passadas = comps = trocas = 0
 
@@ -46,7 +48,7 @@ def quick_sort(lista, ini=0, fim=None):
 
     quick_sort(lista, div + 1, fim)
 
-nums = [7, 4, 2, 9, 0, 6, 8, 3, 1, 5]
-quick_sort(nums)
-print(nums)
+# nums = [7, 4, 2, 9, 0, 6, 8, 3, 1, 5]
+quick_sort(nomes)
+print(nomes)
 print(f"Passadas:{passadas}, comparações {comps}, trocas: {trocas}")

@@ -8,8 +8,8 @@
 # se necessário. Continua o processo, até isolar o penúltimo elemento
 # da lista.
 
-# from data.nomes_desord import nomes
-# from time import time
+from data.nomes_desord import nomes
+from time import time
 
 passadas = comps = trocas = 0
 
@@ -49,9 +49,9 @@ def selection_sort(lista):
 
 #nums = [7, 4, 2, 9, 0, 6, 5, 3, 1, 8]
 #nums = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
-nums = [9, 0, 1, 2, 3, 4, 5, 6, 7, 8]
-selection_sort(nums)
-print(nums)     
+# nums = [9, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+selection_sort(nomes)
+print(nomes)     
 print(f"passadas: {passadas}, comparações: {comps}, trocas: {trocas}")   
 
 # hora_ini = time()
