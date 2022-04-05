@@ -89,32 +89,34 @@ class FormaGeometrica:
             raise Exception("* O tipo deve ser 'R', 'T' ou 'E'.")
         self.__tipo = valor
 
+    ##########################################################
+
+    # Método para cálculo da área da forma geométrica
+    # def calc_area(self):
+
+    # Redefinindo como propriedade somente-leitura (só tem getter)
+    @property
+    def area(self):
+        from math import pi
+        if(self.tipo == 'R'):       # Retângulo
+            return self.base * self.altura
+        elif(self.tipo == 'T'):     # Triângulo
+            return self.base * self.altura / 2
+        else:                       # Elipse
+            return (self.base / 2) * (self.altura / 2) * pi
+
 ######################################################################
 
-# Metodo para calcular a area da forma geometrica
-@property
-def area(self):
-    from math import pi
-    if (self.tipo == "R"):  # Retangulo
-        return self.base * self.altura
-    elif (self.tipo == "T"): # Triangulo
-        return self.base * self.altura / 2
-    else : # Elipse
-        return (self.base/2) * (self.altura/2) * pi
-
-
-########################################################################
-
 # Criando objetos a partir da classe
-forma1 = FormaGeometrica(12, 7, 10)    # Isso chama __init__()
-forma2 = FormaGeometrica(7.5, 8.2, 10)
+forma1 = FormaGeometrica(12, 7, "R")    # Isso chama __init__()
+forma2 = FormaGeometrica(7.5, 8.2, "T")
 
 # forma1.set_base("farinha")
 
 # print(f"forma1: base {forma1.get_base()}, altura {forma1.get_altura()}, tipo {forma1.get_tipo()}")
 # print(f"forma2: base {forma2.get_base()}, altura {forma2.get_altura()}, tipo {forma2.get_tipo()}")
 
-forma2.altura = "dois palmos"
+# forma2.altura = "dois palmos"
 
-print(f"forma1: base {forma1.base}, altura {forma1.altura}, tipo {forma1.tipo}, area {area(forma1.area)}")
-print(f"forma2: base {forma2.base}, altura {forma2.altura}, tipo {forma2.tipo},area {area(forma2.area)}")
+print(f"forma1: base {forma1.base}, altura {forma1.altura}, tipo {forma1.tipo}, área {forma1.area}")
+print(f"forma2: base {forma2.base}, altura {forma2.altura}, tipo {forma2.tipo}, , área {forma2.area}")
