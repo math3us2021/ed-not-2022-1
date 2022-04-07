@@ -87,7 +87,7 @@ emp100mil = merge_sort(empresas)
 new_atual, mem_pico = tracemalloc.get_traced_memory()
 hora_fim = time()
 
-print(emp100mil) # imprime os 100 primeiros nomes
+print(emp100mil) 
 
 print(f"Tempo gasto para ordenar: {(hora_fim - hora_ini) * 1000}ms")
 print(f"Pico de memória: {mem_pico /1024/1024}MB")
