@@ -16,9 +16,9 @@
 # h = pos_sel
 # i = pos_menor
 def a(b): # Abrindo a função
-    def c(d, e): # Abrindo a função
-        f = d # Posição inicial
-        for g in range(d + 1, e + 1): # Para cada elemento da lista
+    def c(d, e): # Abrindo a função , d = pos_ini, e = pos_fim
+        f = d # Posição inicial , f = pos_ini, d = pos_ini
+        for g in range(d + 1, e + 1): # Para cada elemento da lista, sendo posição inicial  é acrescentado + 1 para conseguir realizar a comparação
             if b[g] < b[f]: # Se o elemento for menor que o elemento da posição inicial
                 f = g # Posição inicial recebe a posição do elemento menor
         return g  #O erro estava aqui, pois retorna um f, f = pos_res.

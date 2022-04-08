@@ -10,8 +10,8 @@
 # b = lista
 # c = valor
 # pos = posição na lista
-def a(b, c): # Abrindo a função
-    for pos in range(len(b)): # Para cada elemento da lista
+def a(b, c): # Abrindo a função , b = lista, c = valor
+    for pos in range(len(b)): # Para cada elemento da lista, pos = posição na lista, len = comprimento da lista, b = lista
         if b[pos] == c: return pos # Se encontra coincidência, retorna a posição. Se o elemento for igual a sua posição na lista, retorna a posição
     return -1 # Se não for encontrado, retorna -1
 
