@@ -12,7 +12,7 @@
 # from data.nomes_desord import nomes
 from time import time
 import tracemalloc
-from trabalho.emp25mil import empresas
+from trabalho.emp50mil import empresas
 
 passadas = comps = trocas = 0
 

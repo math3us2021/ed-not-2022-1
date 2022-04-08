@@ -42,6 +42,7 @@ def merge_sort(lista):
 
     # Compara os elementos da sublista entre si e insere na
     # lista ordenada o que for menor
+
     while pos_esq < len(sublista_esq) and pos_dir < len(sublista_dir):
         # O elemento que se encontra na posição da sublista esquerda
         # é menor que o que se encontra na posição da sublista direita
@@ -56,14 +57,19 @@ def merge_sort(lista):
 
     # Verificação da sobra
     sobra = []
-
     # Sobra à esquerda
     if pos_esq < pos_dir: sobra = sublista_esq[pos_esq:]
     # Sobra à direita
     else: sobra = sublista_dir[pos_dir:]
 
     juncoes +=1
-
+    # c = meio
+# d = sublista_esquerda
+# e = sublista_direita
+# f = pos_esquerda
+# g = pos_direita
+# h = ordenada
+# i = sobra
     # O resultado final é a concatenação da lista ordenada
     # com a sobra
     return ordenada + sobra
