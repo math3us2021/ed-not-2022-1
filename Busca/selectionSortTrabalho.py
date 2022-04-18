@@ -8,7 +8,7 @@
 # se necessário. Continua o processo, até isolar o penúltimo elemento
 # da lista.
 
-from trabalho.emp25mil import empresas
+from trabalho.emp50mil import empresas
 # from data.nomes_desord import nomes
 from time import time
 import tracemalloc

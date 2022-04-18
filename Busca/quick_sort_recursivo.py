@@ -3,8 +3,11 @@
 # Escolhe u dos elementos da lista para ser o pivô( na nossa implementação o ultimo elemento)
 # na primeira passado, divide a lista, a partir da posição final da lista,em um sublista á esquerda
 # conyendo apenas valores
-from data.nomes_desord import nomes
-# from time import time
+# from data.nomes_desord import nomes
+from time import time
+from trabalho.emp100mil import empresas
+import tracemalloc
+
 
 passadas = comps = trocas = 0
 
@@ -48,7 +51,15 @@ def quick_sort(lista, ini=0, fim=None):
 
     quick_sort(lista, div + 1, fim)
 
+hora_ini = time()
+tracemalloc.start()
+quick_sort(empresas)
+new_atual, mem_pico = tracemalloc.get_traced_memory()
+hora_fim = time()
+
 # nums = [7, 4, 2, 9, 0, 6, 8, 3, 1, 5]
-quick_sort(nomes)
-print(nomes)
+
+print(empresas)
+print(f"Tempo gasto para ordenar: {(hora_fim - hora_ini) * 1000}ms")
+print(f"Pico de memória: {mem_pico /1024/1024}MB")
 print(f"Passadas:{passadas}, comparações {comps}, trocas: {trocas}")
