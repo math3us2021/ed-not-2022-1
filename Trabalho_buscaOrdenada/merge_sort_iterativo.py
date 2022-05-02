@@ -5,7 +5,9 @@
 #   Em seguida, usando a técnica de mesclagem (merge), "remonta" o vetor,
 #   dessa vez com os elementos já em ordem.
 
-from data.nomes_desord import nomes
+from trabalho.emp100mil import empresas
+
+# from data.nomes_desord import nomes
 from time import time
 import tracemalloc
 
@@ -42,7 +44,6 @@ def merge_sort(lista):
 
     # Compara os elementos da sublista entre si e insere na
     # lista ordenada o que for menor
-
     while pos_esq < len(sublista_esq) and pos_dir < len(sublista_dir):
         # O elemento que se encontra na posição da sublista esquerda
         # é menor que o que se encontra na posição da sublista direita
@@ -57,41 +58,36 @@ def merge_sort(lista):
 
     # Verificação da sobra
     sobra = []
+
     # Sobra à esquerda
     if pos_esq < pos_dir: sobra = sublista_esq[pos_esq:]
     # Sobra à direita
     else: sobra = sublista_dir[pos_dir:]
 
     juncoes +=1
-    # c = meio
-# d = sublista_esquerda
-# e = sublista_direita
-# f = pos_esquerda
-# g = pos_direita
-# h = ordenada
-# i = sobra
+
     # O resultado final é a concatenação da lista ordenada
     # com a sobra
     return ordenada + sobra
 
 ###############################################################
 divs = juncoes = comps = 0
-nums = [7, 4, 2, 9, 0, 6, 5, 3, 1, 8,-1,-5]
-# nums = [0,1,2,3,4,5,6,7,8,9]
-resultado = merge_sort(nums)
-print(resultado)
-print(f"Divisoes: {divs}\nComparações: {comps}\nJuncões: {juncoes}")
+# nums = [7, 4, 2, 9, 0, 6, 5, 3, 1, 8,-1,-5]
+# # nums = [0,1,2,3,4,5,6,7,8,9]
+# resultado = merge_sort(nums)
+# print(resultado)
+# print(f"Divisoes: {divs}\nComparações: {comps}\nJuncões: {juncoes}")
 
 divs = juncoes = comps = 0
 hora_ini = time()
 tracemalloc.start()
 
-nomes_ord = merge_sort(nomes)
+emp100mil = merge_sort(empresas)
 
 new_atual, mem_pico = tracemalloc.get_traced_memory()
 hora_fim = time()
 
-print(nomes_ord[:100]) # imprime os 100 primeiros nomes
+print(emp100mil) 
 
 print(f"Tempo gasto para ordenar: {(hora_fim - hora_ini) * 1000}ms")
 print(f"Pico de memória: {mem_pico /1024/1024}MB")
