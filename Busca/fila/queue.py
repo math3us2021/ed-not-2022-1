@@ -15,5 +15,15 @@ class Queue:
             return None
         else:
             return self.__data.pop(0)
+    
+    ''' Método para verificar se a fila está vazia '''
+    def peek(self):
+        if self.is_empty():
+            return None
+        else:
+            return self.__data[0]
+
+    def __str__(self) -> str:
+        return str(self.__data)
 
     
