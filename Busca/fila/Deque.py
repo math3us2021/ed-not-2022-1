@@ -25,7 +25,7 @@ class Deque:
         if self.is_empty:
             raise Exception('ERRO: impossível remover de uma fila vazia')
         # Remove o primeiro elemento da fila
-        return self.__data.pop(0)
+        return self.__data.pop()
 
 
     # Metodo de consulta do inicio da fila
@@ -34,8 +34,6 @@ class Deque:
             raise Exception('ERRO: impossível consultar um deque vazio')
         else:
             return self.__data[-1]
-
-
 
 
     def peek(self):
